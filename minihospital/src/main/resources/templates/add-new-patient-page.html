@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form action="#" th:action="@{/patient/addPatient}" th:object="${patient}"  method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+
+                    <div class="list-group ">
+                        <a th:href="@{/doctor/addDoctor}" class="list-group-item list-group-item-action">Add Doctor</a>
+                        <a th:href="@{/patient/addPatient}" class="list-group-item list-group-item-action">Add Patient</a>
+                        <a th:href="@{/doctor/allDoctors}" class="list-group-item list-group-item-action">Doctor list</a>
+                        <a th:href="@{/patient/allPatients}" class="list-group-item list-group-item-action">Patient list</a>
+                        <a href="#" class="list-group-item list-group-item-action">Add Appointment</a>
+                        <a href="#" class="list-group-item list-group-item-action">Appointment list</a>
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4>Add Patient</h4>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label for="name" class="col-4 col-form-label">Name</label>
+                                            <div class="col-8">
+                                                <input id="name" name="name" placeholder="Name"
+                                                    class="form-control here" required="required" type="text"
+                                                    th:field="*{name}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="surname" class="col-4 col-form-label">Surname</label>
+                                            <div class="col-8">
+                                                <input id="surname" name="surname" placeholder="Surname" required="required"
+                                                    class="form-control here" type="text"
+                                                    th:field="*{surname}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="perscode" class="col-4 col-form-label">Personal Code</label>
+                                            <div class="col-8">
+                                                <input id="perscode" name="perscode" placeholder="Personal Code"
+                                                    class="form-control here" type="text"
+                                                    th:field="*{perscode}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="phone" class="col-4 col-form-label">Phone Number</label>
+                                            <div class="col-8">
+                                                <input id="phone" name="phone" placeholder="Phone"
+                                                    class="form-control here" type="text"
+                                                    th:field="*{phone}">
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center">
+                                            
+                                                <button name="submit" type="submit" class="btn btn-dark">Add Patient</button>
+                                            
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

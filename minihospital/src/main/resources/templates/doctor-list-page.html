@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+
+                    <div class="list-group ">
+                        <a th:href="@{/doctor/addDoctor}" class="list-group-item list-group-item-action">Add Doctor</a>
+                        <a th:href="@{/patient/addPatient}" class="list-group-item list-group-item-action">Add Patient</a>
+                        <a th:href="@{/doctor/allDoctors}" class="list-group-item list-group-item-action">Doctor list</a>
+                        <a th:href="@{/patient/allPatients}" class="list-group-item list-group-item-action">Patient list</a>
+                        <a href="#" class="list-group-item list-group-item-action">Add Appointment</a>
+                        <a href="#" class="list-group-item list-group-item-action">Appointment list</a>
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4>Doctor List</h4>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form>
+                                        <table class="table">
+
+                                            <thead class="thead-dark">
+                                              <tr>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">Doctor</th>
+                                                <th scope="col">Speciality</th>
+                                                <th scope="col">Phone</th>
+                                              </tr>
+                                            </thead>
+
+                                            <tbody>
+                                              <tr th:each="doc : ${doctors}">
+                                                <td th:text="${doc.getId()}"></td>
+                                                <td th:text="${doc.getName()} + ' ' + ${doc.getSurname()}"></td>
+                                                <td th:text="${doc.getSpeciality()}"></td>
+                                                <td th:text="${doc.getPhone()}"></td>
+                                              </tr>
+                                            </tbody>
+
+                                          </table>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

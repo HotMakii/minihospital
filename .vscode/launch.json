@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MinihospitalApplication<minihospital>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.viktorijakey.minihospital.MinihospitalApplication",
+            "projectName": "minihospital",
+            "args": ""
+        }
+    ]
+}
